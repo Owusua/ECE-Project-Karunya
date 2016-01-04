@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-image:url(../img/8.jpg);
+    border-top: 5px solid #e56038;
+    color: #333333;
+    font-family: 'Open Sans',sans-serif;
+}
+
+
+
+#books {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+#books td, #books th {
+    font-size: 1em;
+    border: 1px solid #999;
+    padding: 3px 7px 2px 7px;
+}
+
+#books th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #666;
+    color: #ffffff;
+}
+	/* provide some minimal visual accomodation for IE8 and below */
+#books tr{
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the ODD background rows  */
+#books tr:nth-child(odd){ 
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+#books tr:nth-child(even){
+		background: #dae5f4;
+	}
+
+.content_page {
+ /* padding-left: 15px;
+  padding-right: 15px;*/
+  margin: 15px auto;
+  background:#ebe8de;
+  width: 960px;
+  padding: 0 10px;
+  box-shadow: 10px 10px 5px #333333;
+  border-radius: 10px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.content_page .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.content_page h2 {
+  font-weight: normal;
+}
+.content_page .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 2px;
+  text-align: left;
+}
+
+
+.navbar-brand
+{
+color: #fff; 
+font-family: Lucida Handwriting; 
+font-size: 40px; 
+padding-top: 10px;	
+}
+
+
+.logoClass
+{
+/*for Chrome and Opera*/
+-webkit-animation-name:logo;
+-webkit-animation-delay:1s;
+-webkit-animation-duration:5s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-timing-function:ease-in;
+
+/*for other browsers*/
+animation-name:logo;
+animation-delay:1s;
+animation-duration:5s;
+animation-iteration-count:infinite;
+animation-timing-function:linear;
+}
+
+
+.content_page .row .col-lg-3{
+	padding-left: 50px;
+	
+}
+
+.content_page .row .col-lg-9{
+	padding-left: 120px;
+}
+
+.{
+	width: 430px;
+	float: right;
+		
+}
+
+/* Add whatever you need to your CSS reset */
+html, body, h1, form, fieldset, input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  }
+
+
+ .registration{
+	margin-top: 120px;
+	padding-left: 100px;
+	border-radius: 5px;
+	background-color:#2d2d2d;
+	padding-bottom: 50px;
+	padding-top: 20px;
+	 }
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remove the edge padding needed for mobile */
+  .content_page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-left:  0;
+    padding-right: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .p {
+    
+  }
+
+#books {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+}
+
+@-webkit-keyframes logo
+{
+0%   {font-size:16px; font-weight:100;}
+25%  {font-size:18px; font-weight:200;}
+50%  {font-size:20px; font-weight:300;}
+100% {font-size:22px; font-weight:400;}		
+}
+
+@keyframes logo
+{
+0%   {font-size:16px; font-weight:100;}
+25%  {font-size:18px; font-weight:200;}
+50%  {font-size:20px; font-weight:300;}
+100% {font-size:22px; font-weight:400;}			
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+
+        
+	  
+
+
+}

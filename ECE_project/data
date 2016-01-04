@@ -1,0 +1,617 @@
+/*
+SQLyog Enterprise - MySQL GUI v6.13
+MySQL - 5.6.20 : Database - ece_project
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+create database if not exists `ece_project`;
+
+USE `ece_project`;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+/*Table structure for table `admin_user_trails` */
+
+DROP TABLE IF EXISTS `admin_user_trails`;
+
+CREATE TABLE `admin_user_trails` (
+  `trail_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(100) NOT NULL,
+  `new_admin_name` varchar(200) NOT NULL,
+  `transaction_type` varchar(255) NOT NULL,
+  `transaction_id` text NOT NULL,
+  `date_trailed` date NOT NULL,
+  `time_trailed` time NOT NULL,
+  PRIMARY KEY (`trail_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `admin_user_trails` */
+
+/*Table structure for table `admin_users` */
+
+DROP TABLE IF EXISTS `admin_users`;
+
+CREATE TABLE `admin_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `new_admin_name` varchar(255) NOT NULL,
+  `user_contact` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `date_registered` datetime NOT NULL,
+  `user_address` varchar(255) NOT NULL,
+  `user_role` varchar(255) NOT NULL,
+  `new_username` varchar(255) NOT NULL,
+  `new_password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `admin_users` */
+
+insert  into `admin_users`(`id`,`new_admin_name`,`user_contact`,`user_email`,`date_registered`,`user_address`,`user_role`,`new_username`,`new_password`) values (1,'Narain Ponraj','9894426680','narainpons@karunya.edu','2014-09-29 16:32:12','Karunya Nagar, Coimbatore 641114','Admin','narainpons','e1f09ff7183ba3a5f154f0b66afa1516');
+insert  into `admin_users`(`id`,`new_admin_name`,`user_contact`,`user_email`,`date_registered`,`user_address`,`user_role`,`new_username`,`new_password`) values (6,'Jagannath D.J','8883821881','jagan@karunya.edu','2014-09-29 16:16:20','Karunya University','Admin','jagan','7d099da5cb923f9ff14ac4d86a972bc4');
+insert  into `admin_users`(`id`,`new_admin_name`,`user_contact`,`user_email`,`date_registered`,`user_address`,`user_role`,`new_username`,`new_password`) values (7,'MR. Wesley','7892345678','wesleyp@karunya.edu','2014-09-29 16:21:09','Karunya University','Admin','wesley','980abeef32e8e8befd3662abe314a80f');
+
+/*Table structure for table `book_status` */
+
+DROP TABLE IF EXISTS `book_status`;
+
+CREATE TABLE `book_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `access_number` int(50) NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+
+/*Data for the table `book_status` */
+
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (1,11190,0,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (2,18760,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (3,18964,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (4,18966,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (5,18967,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (6,18969,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (7,18970,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (8,18972,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (9,18974,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (10,18976,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (11,18980,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (12,18982,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (13,18984,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (14,18986,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (15,19253,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (16,19254,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (17,19256,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (18,19258,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (19,19260,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (20,19262,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (21,19264,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (22,19265,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (23,19268,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (24,19269,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (25,19271,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (26,19273,2,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (27,19275,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (28,19277,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (29,19278,1,'Available');
+insert  into `book_status`(`id`,`access_number`,`quantity`,`status`) values (30,19280,1,'Available');
+
+/*Table structure for table `books` */
+
+DROP TABLE IF EXISTS `books`;
+
+CREATE TABLE `books` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `access_number` int(11) NOT NULL,
+  `author_name` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `number_of_books` int(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=349 DEFAULT CHARSET=latin1;
+
+/*Data for the table `books` */
+
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (1,11190,'GROB BERNARD','BASIC ELECTRONICS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (2,18760,'BRIJ N AGRAWAL','DESIGN OF GEOSYNCHRONOUS SPACECRAFT',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (3,18964,'RAFAEL C. GONZALEZ;RICHARD E. WOODS','DIGITAL IMAGE PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (4,18965,'GONZALEZ RAFAEL C.;RICHARD E. WOODS','DIGITAL IMAGE PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (5,18966,'ANOKH SINGH;CHHABRA A.K.','PRINCIPLES OF COMMUNICATION ENGINEERING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (6,18967,'RODDY DENNIS;COOLEN JOHN','ELECTRONIC COMMUNICATIONS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (7,18969,'LIAO SAMUEL Y','MICROWAVE DEVICES AND CIRCUITS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (9,18970,'MORRIS MANO M.','DIGITAL DESIGN',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (10,18972,'ZIEMER RODGER E.','SIGNALS AND SYSTMES CONTINUOUS DISCRETE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (11,18974,'RAJARAMAN V.','FUNDAMENTALS OF COMPUTER',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (12,18976,'RAMESH S. GAONKAR','MICROPROCESSOR ARCHITECTURE PROGRAMMING AND APPLICATIONS WITH THE 8085',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (13,18980,'WILLIAM H. HAYT','ENGINEERING ELECTROMAGNETICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (14,18982,'HOFFMAN KENNETH','LINEAR ALGEBRA',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (15,18984,'DONALD L. SCHILLING','ELECTRONIC CIRCUITS DISCRETE AND INTEGRATED',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (16,18986,'MITHAL G.K;RAVI MITTAL','ELECTRONIC DEVICES AND CURCUITS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (17,19253,'GULATI R.R.','MODERN TELEVISION PRACTICE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (18,19254,'HERBERT TAUB;DONALD L. SCHILLING','PRINCIPLES OF COMMUNICATION SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (23,19256,'GERD KEISER','OPTICAL FIBER COMMUNICATIONS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (24,19258,'HALL DOUGLAS V','MICROPROCESSOR ARCHITECTURE, PROGRAMMING, AND APPLICATIONS WITH THE 8085 : 18118-',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (25,19259,'HALL DOUGLAS V.','MICROPROCESSORS AND INTERFACING PROGRAMMING AND HARDWARE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (26,19260,'ANDREW S. TANENBAUM','COMPUTER NETWORKS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (27,19262,'HAYKIN SIMON','COMMUNICATION SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (28,19264,'LIU YU CHENG','MICRO COMPUTER SYSTEMS THE 8086/8088 FAMILY',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (29,19265,'GULATI R.R.','MONOCHROME AND COLOUR TELEVISION',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (30,19268,'VALKENBURG MEVAN','NETWORK ANALYSIS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (31,19269,'ADITYA P. MATHUR','INTRODUCTION TO MICROPROCESSOR',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (32,19271,'ROY CHOUDHURY D.;SHAIL B. JAIN','LINEAR INTEGRATED CIRCUITS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (33,19273,'BENJAMIN C. KUO','AUTOMATIC CONTROL SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (34,19275,'JOHN D. RYDER','NETWORKS LINES AND FIELDS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (35,19277,'SEDHA R.S.','A TEXT BOOK OF APPLIED ELECTRONICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (36,19278,'THOMAS L. FLOYD','DIGITAL FUNDAMENTALS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (37,19280,'LAWRENCE R. RABINER;GOLD BERNARD','THEORY AND APPLICATION OF DIGITAL SIGNALS PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (38,19281,'YU CHENG LIU','MICROCOMPUTER SYSTEMS THE 8086/8088 FAMILY',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (39,19282,'EDWARD C. JORDAN;BALMAN KEITH G','ELECTROMAGNETIC WAVES AND RADIATING SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (40,19284,'JACOB MILLMAN;CHRISTOS C. HALKIAS','ELECTRONIC DEVICES AND CIRCUITS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (41,19286,'CARLSON A. BRUCE','COMMUNICATION SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (42,19288,'HAMACHER V. CARL','COMPUTER ORGANIZATION',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (43,19290,'ALAN V. OPPENHEIM','DIGITAL SIGNAL PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (44,19292,'NAGRATH I.J.;GOPAL M','CONTROL SYSTEMS ENGINEERING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (45,19348,'MITHAL G.K.','ELECTRONIC DEVICES AND CIRCUITS VOLUME 1',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (46,19453,'BURRUS C SIDNEY','COMPUTER BASED EXERCISES FOR SIGNAL PROCESSING MATLAB',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (47,19454,'NIL','CIVIL ENGINEERING DRAWING MANUAL',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (48,19673,'ANDREAS ANTONIOU','DIGITAL FILTERS ANALYSIS AND DESIGN',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (49,19770,'PRATT WILLIAM K','DIGITAL IMAGE PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (50,19771,'PRATT TIMOTHY;BOSTIAN CHARLES W','SATELLITE COMMUNICATION',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (51,20237,'FU K.S.','ROBOTICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (52,20238,'JACOB MILLMAN','INTEGRATED ELECTRONICS ANALOG AND DIGITAL CIRCUITS AND SYSTEMS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (53,20241,'JOHN G. PROAKIS;DIMITRIS G. MANOLAKIS','DIGITAL SIGNAL PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (54,20242,'ALBERT PAUL MALVINO','DIGITAL PRINCIPLES AND APPLICATIONS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (55,20245,'BYRON S. GOTTFRIED','PROGRAMMING WITH C',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (56,20248,'HENRY MULLISH','THE SPRITE OF C',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (57,20285,'SIMON RAMO;JOHN R. WHINNERY;THEODORE VAN DUZER','FIELDS AND WAVES IN COMMUNICATION ELECTRONICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (58,20286,'HERBERT TAUB;DONALD L. SCHILLING','DIGITAL INTEGRATED ELECTRONICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (59,20291,'ROBERT E. COLLIN','FOUNDATIONS FOR MICROWAVE ENGINEERING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (60,20293,'ZIEMER.R.E;TRANTER.W.H','PRINCIPLES OF COMMUNICATIONS : SYSTEMS, MODULATION AND NOISE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (61,20295,'DESHPANDE N.D.;DESHPANDE.D.A;RANGOLE.P.K','COMMUNICATION ELECTRONICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (62,20298,'DOUGLAS A. SKOOG;JAMES HOLLER.F;NIEMAN,TIMOTHY A.','PRINCIPLES OF INSTRUMENTAL ANALYSIS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (63,20365,'RAMESH S. GAONKAR','MICROPROCESSOR ARCHITECTURE PROGRAMMING AND APPLICATIONS WITH THE 8085',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (64,20367,'LAWRENCE R. RABINER;BERNARD GOLD','THEORY AND APPLICATION OF DIGITAL SIGNAL PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (65,20369,'VIJAY AHUJA','DESIGN AND ANALYSIS OF COMPUTER COMMUNICATION NETWORKS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (66,20371,'HARRINGTON. STEVEN','COMPUTER GRAPHICS : A PROGRAMMING APPROACH',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (67,20374,'ATHANASIOS PAPOULIS','PROBABILITY RANDOM VARIABLES AND STOCHASTIC PROCESSES',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (68,20375,'WILLIAM M. NEWMAN;SPROULL.ROBERT.F','PRINCIPLES OF INTERACTIVE COMPUTER GRAPHICS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (69,20378,'DATE C.J.','AN INTRODUCTION TO DATABASE SYSTEMS VOLUME1',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (70,20379,'ANDREW S. TANENBAUM','COMPUTER NETWORKS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (71,20381,'ELAINE RICH;KNIGHT.KEVIN','ARTIFICIAL INTELLIGENCE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (72,20384,'EUGENE CHARNIAK;MCDERMOTT.DREW','INTRODUCTION TO ARTIFICIAL INTELLIGENCE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (73,20385,'JOHN P. HAYES','COMPUTER ARCHITECTURE AND ORGANIZATION',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (74,20388,'OPPENHEIM.ALAN.V;SCHAFER.W','DIGITAL SIGNAL PROCESSING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (75,20389,'ADITYA P. MATHUR','INTRODUCTION TO MICROPROCESSORS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (76,20417,'JOHN J. DONOVAN','SYSTEM PROGRAMMING',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (77,20709,'DAVID A. BELL','ELECTRONIC DEVICES AND CIRCUITS',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (78,20711,'KENNETH C. LOUDEN','COMPILER CONSTRUCTION : PRINCIPLES AND PRACTICE',0);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (79,20713,'KRISHNA KANT','COMPUTER BASED INDUSTRIAL CONTROL',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (80,20714,'IAN SOMMERVILLE','SOFTWARE ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (81,20715,'JOHN G. PROAKIS','DIGITAL COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (82,20716,'SHAKU ATRE','DISTRUBUTED DATABASES, COOPERATIVE PROCESSING AND NETWORKING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (83,20718,'VEDAM SUBRAHMANYAM','ELECTRIC DEVICES : CONCEPTS AND APPLICATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (84,20719,'McKENZIE SMITH I.','HUGHES ELECTRICAL TECHNOLOGY',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (85,20720,'EARL GOSE;RICHARD JOHNSONBAUGH;STEVE JOST','PATTERN RECOGNITION AND IMAGE ANALYSIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (86,20721,'NAGRATH I.J.;GOPAL M.','CONTROL SYSTEMS ENGINEERING',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (87,20723,'ALBERT PAUL MALVINO','MALVINO ELECTRONIC PRINCIPLES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (88,20724,'MICHAEL SLATER','MICROPROCESSOR BASED DESIGN : A COMPREHENSIVE GUIDE TO EFFECTIVE HARDWARE DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (89,20725,'JAMES L. ANTONAKOS','AN INTRODUCTION TO THE INTEL FAMILY OF MICROPROCESSORS : A HANDS ON APPROACH UTILIZING THE 80 x 86 MICROPROCESSOR FAMILY',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (90,20726,'WILLIAM SCHWEBER','ELECTRONIC COMMUNICATION SYSTEMS : A COMPLETE COURSE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (91,20727,'ZVI KOHAVI','SWITCHING AND FINITE AUTOMATA THEORY',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (92,20728,'ANDREAS ANTONIOU','DIGITAL FILTERS ANALYSIS AND DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (93,20729,'RANGAN C.S;SARMA G.R;MANI V.S','INSTRUMENTATION : DEVICES AND SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (94,20730,'JAMES D. FOLEY;ANDRIES VAN DAM;STEVEN K. FEINER','COMPUTER GRAPHICS : PRINCIPLES AND PRACTICE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (95,20731,'PATRICK HENRY WINSTON','ARTIFICIAL INTELLIGENCE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (96,20732,'BRIAN W. KERNIGHAN;DENNIS M. RITCHIE','THE C PROGRAMMING LANGUAGE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (97,20734,'WILLIAM C.Y. LEE','MOBILE CELLULAR TELECOMMUNICATIONS : ANALOG AND DIGITAL SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (98,20735,'JOHN PAUL MUELLER','THE COMPLETE REFERENCE VISUAL STUDIO 6',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (99,20736,'KENNETH H. ROSEN','DISCRETE MATHEMATICS AND ITS APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (100,20737,'NILS J. NILSSON','ARTIFICIAL INTELLIGENCE : A NEW SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (101,20738,'THOMAS H. CORMEN;CHARLES E. LEISERSON;RONALD L.RIVEST','INTRODUCTION TO ALGORITHMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (102,20739,'MARK NELSON;JEAN-LOUP GAILLY','THE DATA COMPRESSION BOOK',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (103,20740,'CURTIS F. GERALD;PATRICK O.WHEATLEY','APPLIED NUMERICAL ANALYSIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (104,21029,'KENNETH J. AYALA','THE 8051 MICROCONTROLLER : ARCHITECTURE, PROGRAMMING AND APPLICATIONS',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (105,21288,'GERD E. KEISER','LOCAL AREA NETWORK',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (106,21289,'ERNEST O. DOEBELING','MEASUREMENT SYSTEMS APPLICATIONS AND DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (107,21290,'UYLESS BLACK','COMPUTER NETWORKS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (108,21291,'GARY R. WRIGHT;WRICHARD W STEVENS','TCP IP ILLURTRATED VOLUME 2',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (109,21293,'SID NIE FEIT','TCP IP',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (110,21597,'SALIVAHANAN S.;SURESH KUMAR.N;VALLAVARAJ.A','ELECTRONIC DEVICES AND CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (111,21600,'HERBERT SCHILDT','C++: THE COMPLETE REFERENCE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (112,21603,'BALAGURUSAMY E.','OBJECT ORIENTED PROGRAMMING WITH C++',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (113,21606,'BALAGURUSAMY E.','PROGRAMMING WITH JAVA A PRIMER',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (114,21998,'PRABHAN D.K.','FAULT TOLERANT COMPUTING  THEORY AND TECHNIQUES VOLUME 2',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (115,21999,'PRADHAN D.K.','FAULT TOLERANT COMPUTING VOLUME 1',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (116,22334,'ROBERT G. SEIPPES','OPTOELECTRONICS FOR TECHNOLOGY AND ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (117,22335,'CHARLES K. KAO','OPTICAL FIBER SYSTEMS: TECHNOLOGY, DESIGN, AND APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (118,22557,'RAMAKANT A. GAYAKWAD','OP AMPS AND LINEAR INTEGRATED CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (119,23384,'GUPTA B.R.','ELECTRONICS AND INSTRUMENTATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (120,23902,'CHI TSONG CHEN','SYSTEM AND SIGNAL ANALYSIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (121,23905,'MARVIN K. SIMON;SAMI M. HINEDI;WILLIAM C. LINDSEY','DIGITAL COMMUNICATION TECHNIQUES : SIGNAL DESIGN AND DETECTION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (122,23917,'WAYNE TOMASI','ADVANCED ELECTRONIC COMMUNICATIONS SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (123,23921,'WAYNE WOLF','MODERN VLSI DESIGN   SYSTEMS ON SILICON',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (124,25342,'CHRIS MARRIN;BRUCE CAMPBELL','TEACH YOURSELF VRML 2 IN 21 DAYS : LEARN THE BASIC OF THE VRML 2 SPECIFICATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (125,26071,'SWAMINATHAN S.; MUTHUSAMY M.','FACULTY DEVELOPMENT PROGRAME COURSE MATERIAL PACKAGE VOLUME1',3);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (126,32877,'KAMILO FEHER','DIGITAL COMMUNICATIONS : SATELLITE/EARTH STATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (127,32878,'KAMILO FEHER','MICROWAVE COMMUNICATIONS APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (128,32879,'TRI T. HA','DIGITAL SATELLITE COMMUNICATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (129,33964,'ABRAHAM CHANDY D .','DIGITAL ELECTRONICS LAB MANUAL',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (130,33969,'SHOBHA REKH','MICROPROCESSOR LABORATORY MANUAL',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (131,34036,'SALIVAHANAN S.;ARIVAZHAGAN S.','DIGITAL CIRCUITS AND DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (132,34037,'MUTHUSUBRAMANIAN R.;AYYAPPAN K.','NETWORK ANALYSIS AND SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (133,34038,'JOHN B. PEATMAN','DESIGN WITH MICROCONTROLLERS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (134,34762,'RAFAEL C. GONZALEZ;RICHARD E. WOODS','DIGITAL IMAGE PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (135,34797,'UMESH SINHA','NETWORK ANALYSIS AND SYNTHESIS',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (136,34799,'SALIVAHANAN S.;SURESH KUMAR.N;VALLAVARAJ.A','ELECTRONIC DEVICES AND CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (137,34804,'JOHN G. PROAKIS;CHARLES M. RADER;FUYUN LING','ALGORITHMS FOR STATISTICAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (138,34805,'RICHARD G. LYONS','UNDERSTANDING DIGITAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (139,34807,'RAINER HANDEL;MANFRED N.HUBER;STEFAN SCHRODER','ATM NETWORKS : CONCEPTS PROTOCOLS APPLICATION',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (140,34811,'PETER JACKSON','INTRODUCTION TO EXPERT SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (141,34812,'HAROLD KOLIMBIRIS','DIGITAL COMMUNICATIONS SYSTEMS : WITH SATELLITE AND FIBER OPTICS APPLICAITONS',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (142,34820,'WILLIAM J. PALM III','INTRODUCTION TO MATLAB 6 FOR ENGINEERS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (143,34821,'STEPHEN BROWN;ZVONKO VRANESIC','FUNDAMENTALS OF DIGITAL LOGIC WITH VHDL DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (144,34822,'SUNG MO KANG;YUSUF LEBLEBICI','CMOS DIGITAL INTEGRATED CIRCUITS : ANALYSIS AND DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (145,34824,'DANIEL TABAK','ADVANCED MICROPROCESSORS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (146,34828,'MUHAMMAD H. RASHID','SPICE FOR CIRCUITS AND ELECTRONICS USING PSPICE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (147,34829,'DONALD HEARN;PAULINE BAKER M.','COMPUTER GRAPHICS',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (148,34831,'BEHROUZ A. FOROUZAN','DATA COMMUNICATIONS AND NETWORKING',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (149,34835,'JOHN F. WAKERLY','DIGITAL DESIGN : PRINCIPLES AND PRACTICES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (150,34836,'DENNIS RODDY','SATELLITE COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (151,34840,'DANIEL TABAK','ADVANCED MICROPROCESSORS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (152,34854,'DOUGLAS V. HALL','MICROPROCESSORS AND INTERFACING : PROGRAMMING AND HARDWARE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (153,34959,'WILLIAM STALLINGS','DATA AND COMPUTER COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (154,34961,'MORRIS MANO M.','DIGITAL LOGIC AND COMPUTER DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (155,34972,'JOHN B. PEATMAN','DESIGN WITH PIC MICROCONTROLLERS',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (156,34976,'BHASKER J.','VHDL PRIMER',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (157,34979,'STANLEY B. LIPPMAN;JOSEE LAJOIE','C++ PRIMER',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (158,34980,'MUHAMMAD ALI MAZIDI;JANICE GILLISPIE MAZIDI','THE 8051 MICROCONTROLLER AND EMBEDDED SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (159,34984,'RAMAKANT A. GAYAKWAD','OP AMPS AND LINEAR INTEGRATED CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (160,34986,'MERRILL I. SKOLNIK','INTRODUCTION TO RADAR SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (161,34987,'JOHN D. KRAUS','ANTENNAS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (162,34992,'RANDALL L. GEIGER;PHILLIP E. ALLEN;NOEL R. STRADER','VLSI DESING TECHNIQUES FOR ANALOG AND DIGITAL CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (163,34994,'THIAGARAJAN VISWANATHAN','TELECOMMUNICATION SWITCHING SYSTEMS AND NETWORKS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (164,34996,'WILLIAM C.Y. LEE','MOBILE CELLULAR TELECOMMUNICATIONS : ANALOG AND DIGITAL SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (165,34997,'KAMILO FEHER','WIRELESS DIGITAL COMMUNICATIONS : MODULATION AND SPREAD SPECTRUM APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (166,35000,'WILLIAM M. NEWMAN;ROBERT F. SPROULL','PRINCIPLES OF INTERACTIVE COMPUTER GRAPHICS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (167,35003,'KAI HWANG;FAYE A. BRIGGS','COMPUTER ARCHITECTURE AND PARALLEL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (168,35004,'MUHAMMAD H. RASHID','POWER ELECTRONICS : CIRCUTS DEVICES AND APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (169,35010,'THOMAS L. FLOYD','ELECTRONIC DEVICES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (170,35089,'ZAINALABEDIN NAVABI','VHDL ANALYSIS AND MODELING OF DIGITAL SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (171,35107,'EMMANUEL C. IFEACHOR;BARRIE W.JERVIS','DIGITAL SIGNAL PROCESSING : A PRACTICAL APPROACH',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (172,35108,'HENRY W.OTT','NOISE REDUCTION TECHNIQUES IN ELECTRONIC SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (173,35224,'FRANKLIN F. KUO','NETWORK ANALYSIS AND SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (174,35387,'NAGOOR KANI A.','CONTROL SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (175,35553,'SUDHAKAR YALAMANCHILI','INTRODUCTORY VHDL FROM SIMULATION TO SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (176,35556,'SIMON HAYKIN','ADAPTIVE FILTER THEORY',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (177,35561,'PURI V.K.','DIGITAL ELECTRONICS : CIRCUITS AND SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (178,35564,'SALIVAHANAN.S;VALLAVARAJ.A;GNANAPRIYA.C','DIGITAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (179,35988,'CHITODE J.S','SIGNALS AND SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (180,35989,'BAKSHI U.A.;BAKSHI A.V','NETWORK ANALYSIS AND SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (181,35990,'GODSE AP;GODSE DA','DIGITAL SYSTEM DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (182,36040,'WILLIAM PRATT K.','DIGITAL IMAGE PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (183,36272,'MUTHUSUBRAMANIAN R.;SALIVAHANAN S.;MURALEEDHARAN K.A.','BASIC ELECTRICAL ELECTRONICS AND COMPUTER ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (184,36280,'DAS J;MULLICK S.K.;CHATTERJEE P.K','PRINCIPLES OF DIGITAL COMMUNICATION : SIGNAL REPRESENTATION, DETECTION, ESTIMATION AND INFORMATION CONDING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (185,36761,'MAHADEVAN T.','COMMUNICATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (186,36762,'SENTHILNATHAN T.','SEMICONDUCTOR PHYSICS AND OPTOELECTRONICS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (187,36764,'MAHADEVAN T.','LINEAR INTEGRATED CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (188,36765,'MAHADEVAN T.','TELECOMMUNICATION SWITCHING TECHNIQUES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (189,37349,'BAKSHI U.A.;GODSE A.P.','LINEAR INTEGRATED CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (190,37350,'BAKSHI U.A.;BAKSHI A.V.','MEASUREMENTS AND INSTRUMENTATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (191,37351,'JASMIN M.','ELECTRONIC CIRCUITS II',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (192,37352,'SRINIVASAN K.S.','ELECTRONIC CIRCUITS II : FOR ECE IV SEMESTER',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (193,37353,'MICHAEL SHUR','PHYSICS OF SEMICONDUCTOR DEVICES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (194,37378,'JOSEPH A. EDMINISTER','THEORY AND PROBLEMS OF ELECTROMAGNETICS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (195,37379,'AGARWAL D.C','FIBER OPTIC COMMUNICATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (196,37380,'JOHN B. ANDERSON','DIGITAL TRANSMISSION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (197,37932,'SRINIVASAN K.S.','ELECTRONIC DEVICES : FOR EEE ECE ICE AND EIE AS PER ANNA UNIVERISITY SYLLABUS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (198,37933,'JAYANTHY T.;SHAJI K.S','MICROWAVE ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (199,38192,'ANOKH SINGH','PRINCIPLES OF COMMUNICATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (200,38193,'CHITODE J.S.','DIGITAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (201,38200,'VENKATARAM S.K.','DIGITAL COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (202,38201,'EUGENE XAVIER S.P.','DIGITAL SIGNAL PROCESSING : ELECTRONICS AND COMMUNICATION ELECTRICAL ELECTRONICS AND INSTRUMENTATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (203,38202,'EUGENE XAVIER S.P.','SIGNALS AND SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (204,38203,'THERAJA B.L.;SEDHA R.S.','PRINCIPLES OF ELECTRONIC DEVICES AND CIRCUITS : ANALOG AND DIGITAL',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (205,38209,'BAKSHI U.A.;BAKSHI A.V','NETWORK ANALYSIS AND SYNTHESIS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (206,38210,'GODSE A.P.;BAKSHI U.A.','ELECTRONIC CIRCUITS 1',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (207,38216,'GODSE AP;GODSE DA','DIGITAL SYSTEM',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (208,38257,'CHITODE J.S.','PRINCIPLES OF COMMUNICATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (209,38258,'GODSE A.P.;GODSE D.A.','COMPUTER ARCHITECTURE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (210,38259,'ARNON COHEN','BIOMEDICAL SIGNAL PROCESSING : TIME AND FREQUENCY DOMAINS ANALYSIS VOL.I',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (211,38260,'ARNON COHEN','BIOMEDICAL SIGNAL PROCESSING : COMPRESSION AND AUTOMATIC RECOGNITION VOL. II',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (212,38390,'RAMESH BABU P.','DIGITAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (213,38735,'GERD E. KEISER','LOCAL AREA NETWORK',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (214,38736,'SISODIA M.L.;RAGHUVANSHI.G.S','MICROWAVE CIRCUITS AND PASSIVE DEVICES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (215,38737,'BERNARD SKLAR','DIGITAL COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (216,38738,'DAVID K. CHENG','FIELD AND WAVE ELECTROMAGNETICS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (217,38739,'DAVID E. GOLDBERG','GENETIC ALGORITHMS : IN SEARCH, OPTIMIZATION AND MACHINE LEARNING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (218,38740,'RICHARD R. SPENCER;MOHAMMED S.GHAUSI','INTRODUCTION TO ELECTRIC CIRCUIT DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (219,38741,'ANNABEL Z. DODD','THE ESSENTIAL GUIDE TO TELECOMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (220,38742,'SAM SHANMUGAM K.','DIGITAL AND ANALOG COMMUNICATION SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (221,38743,'GOPAL M.','DIGITAL CONTROL AND STATE VERIABLE METHODS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (222,38744,'SAMIR S. SOLIMAN;MANDYAM D. SRINATH','CONTINUOUS AND DISCRETE SIGNALS AND SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (223,38745,'SIMON HAYKIN','COMMUNICATION SYSTEMS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (224,38746,'SERGIO FRANCO','DESIGN WITH OPERATIONAL AMPLIFIERS AND ANALOG INTEGRATED CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (225,38747,'BARRY B. BREY','THE INTEL MICROPROCESSORS 8086 8088 80186 80188 80286 80836 80486 PENTIUM AND PENTIUM PRO PROCESSOR : ARCHITECTURE PROGRAMMING AND INTERFACING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (226,38748,'DOUGLAS A. PUCKNELL;KAMRAN ESHRAGHIAN','BASIC VLSI DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (227,38749,'NILS J. NILSSON','PRINCIPLES OF ARTIFICIAL INTELLIGENCE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (228,38750,'RAJASEKARAN S.;VIJAYALAKSHIMI PAI','NEURAL NETWORK FUZZY LOGIC AND GENETIC ALGORITHMS : SYNTHESIS AND APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (229,38751,'LESLIE CROMWELL;FRED J. WEIBELL;ERICH A. PFEIFFER','BIOMEDICAL INSTRUMENTATION AND MEASUREMENTS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (230,38752,'JYH SHING ROGER JANG;CHUEN TSAI SUN;EIJI MIZUTANI','NEURO FUZZY AND SOFT COMPUTING : A COMPUTATIONAL APPROACH TO LEARNING AND MACHINE INTELLIGENCE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (231,38753,'STEPHEN BROWN;SVONKO VRANESIC','FUNDAMENTALS OF DIGITAL LOGIC WITH VHDL DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (232,38754,'GEORGE J. KLIR;BO YUAN','FUZZY SETS AND FUZZY LOGIC : THEORY AND APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (233,38755,'JACOB BAKER R.;HARRY W. LI;DAVID E. BOYCE','CMOS CIRCUIT DESIGN LAYOUT AND SIMULATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (234,38756,'KHANDPUR R.S.','HANDBOOK OF BIOMEDICAL INSTRUMENTATION',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (235,39102,'JOHN B. FRALEIGH','A FIRST COURSE IN ABSTRACT ALGEBRA',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (236,39103,'JAN M. RABAEY;ANANTHA CHANDRAKASAN;BORIVOJE NIKOLIC','DIGITAL INTEGRATED CIRCUITS : A DESIGN PERSPECTIVE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (237,39105,'KAUSHIK ROY;SHARAT C. PRASAD','LOW POWER CMOS VLSI CIRCUIT DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (238,39109,'RAMESH C. GAUR','REENGINEERING LIBRARY AND INFORMATION SERVICES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (239,39148,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 1',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (240,39149,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 2',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (241,39150,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 3',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (242,39151,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 4',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (243,39153,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 5',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (244,40089,'KURUGANTI','MODERN LABORATORY TRAINING EQUIPMENT',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (245,40100,'POORNACHANDRA RAO S.;SASIKALA B.','HANDBOOK OF EXPERIMENTS IN ELECTRONICS AND COMMUNICATION ENGINEERING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (246,40277,'CHITODE J.S.','DIGITAL COMMUNICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (247,40278,'GODSE A.P.;GODSE D.A.','MICROPROCESSORS AND APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (248,40279,'BAGAD V.S.;DHOTRE I.A.','COMPUTER COMMUNICATION NETWORKS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (249,40280,'ATUL P. GODSE;DEEPALI A. GODSE','COMPUTER ARCHITECTURE',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (250,40281,'BAGAD V.S.;DHOTRE I.A.','COMPUTER NETWORKS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (251,40282,'CHITODE J.S.','DIGITAL SIGNAL PROCESSING',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (252,40283,'JOSEPH SHAMIR','OPTICAL SYSTEMS AND PROCESSES',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (253,40284,'DOUGLAS A. PUCKNELL;KAMRAN ESHRAGHIAN','BASIC VLSI DESIGN',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (254,40285,'GUPTA S.C.','TEXTBOOK ON OPTICAL FIBER COMMUNICATION AND ITS APPLICATIONS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (255,40286,'ANAND KUMAR A.','FUNDAMENTALS OF DIGITAL CIRCUITS',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (256,40287,'BRILLIANT TUTORIALS','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 6',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (257,40288,'BRILLIANT TUTORIALS\r\n','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 7\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (258,40289,'BRILLIANT TUTORIALS\r\n','GATE ELECTRONICS AND COMMUNICATION ENGINEERING SET 8\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (259,40462,'PHILLIP E. ALLEN;DOUGLAS R. HOLBERG\r\n','CMOS ANALOG CIRCUIT DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (260,40463,'RUDRA PRATAP\r\n','GETTING STARTED WITH MATLAB VERSION 7 : A QUICK INTRODUCTION FOR SCIENTISTS AND ENGINEERINS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (261,40464,'STAMATIOS V. KARTALOPOULOS\r\n','UNDERSTANDING NEURAL NETWORKS AND FUZZY LOGIC BASIC CONCEPTS AND APPLICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (262,40643,'MANAHAR LOTIA;PRADEEP NAIR\r\n','ALL ABOUT MOTHERBOARD : COMPLETE INTRODUCTION AND TROUBLESHOOTING\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (263,41579,'KIAT SENG YEO;SAMIR S. ROFAIL;WANG LING GOH\r\n','CMOS BICMOS ULSI : LOW VOLTAGE, LOW POWER\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (264,41580,'DAVID A. BELL\r\n','SOLID STATE PULSE CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (265,41581,'PHILLIP E. ALLEN;DOUGLAS R. HOLBERG\r\n','CMOS ANALOG CIRCUIT DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (266,41582,'DAVID A. BELL\r\n','ELECTRONIC DEVICES AND CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (267,41583,'TIMOTHY PRATT;CHARLES W. BOSTIAN;JEREMY ALLNUTT\r\n','SATELLITE COMMUNICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (268,41584,'JACOB MILLMAN;HERBERT TABH\r\n','PULSE DIGITAL AND SWITCHING WAVEFORMS : DEVICES AND CIRCUITS FOR GENERATION PROCESSING\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (269,41585,'JOHN D. KRAUS;RONALD J. MARHEFKA\r\n','ANTENNAS : FOR ALL APPLICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (270,41586,'PARANJOTHI S.R.\r\n','ELECTRIC CIRCUIT ANALYSIS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (271,41587,'DAVID K. CHENG\r\n','FIELD AND WAVE ELECTROMAGNETICS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (272,41588,'CATHERINE SOANES\r\n','COMPACT OXFORD DICTIONARY THESAURUS AND WORDPOWER GUIDE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (273,42070,'KHARE R.P.\r\n','FIBER OPTICS AND OPTOELECTRONICS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (274,42071,'ADEL S. SEDRA;KENNETH C. SMITH\r\n','MICROELECTRONIC CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (275,42072,'MEENAKSHI RAMAN;SANGEETA SHARMA\r\n','TECHNICAL COMMUNICATION : PRINCIPLES AND PRACTICE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (276,42073,'LATHI B.P.\r\n','MODERN DIGITAL AND ANALOG COMMUNICATION SYSTEMS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (277,42182,'ABDUL NAMITH A.\r\n','COMPUTER ARCHITECTURE : AS PER THE REVISED SYLLABUS FOR FIFTH SEMESTER ECE STUDENTS OF ANNA UNIVERSITY\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (278,42449,'TOHRU KATAYAMA;SUEO SUGIMOTO\r\n','STATISTICAL METHODS IN CONTROL AND SIGNAL PROCESSING\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (279,42450,'ADRIAN LOINOVICI\r\n','COMPUTER AIDED ANALYSIS OF ACTIVE CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (280,42451,'DAVID NAYLOR;SIMON JONES\r\n','VHDL: A LOGIC SYNTHESIS APPROACH\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (281,42452,'BEN COHEN\r\n','VHDL CODING STYLES AND METHODOLOGIES : AN IN DEPTH TUTORIAL\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (282,42453,'YANNIS TSIVIDIS\r\n','OPERATION AND MODELING OF THE MOS TRANSISTOR\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (283,42454,'GOPAL R.\r\n','PROBLEMS AND SOLUTIONS IN INTEGRATED ELECTRONICS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (284,42455,'KESHAB K. PARHI\r\n','VLSI DIGITAL SIGNAL PROCESSING SYSTEMS : DESIGN AND IMPLEMENTATION\r\n',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (285,42457,'JONATHAN W. VALVANO\r\n','INTRODUCTION TO EMBEDDED MICROCOMPUTER SYSTEMS : MOTOROLA 6811 AND 6812 SIMULATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (286,42458,'STEPHEN B. FURBER\r\n','VLSI RISC ARCHITECTURE AND ORGANIZATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (287,42459,'DONALD GROSS;CARL M. HARRIS\r\n','FUNDAMENTALS OF QUEUEING THEORY\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (288,42460,'DEVENDRA K. MISRA\r\n','RADIO FREQUENCY AND MICROWAVE COMMUNICATION CIRCUITS : ANALYSIS AND DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (289,42461,'DANIEL D. GAJSKI\r\n','PRINCIPLES OF DIGITAL DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (290,42462,'BEHZAD RAZAVI\r\n','DESIGN OF ANALOG CMOS INTEGRATED CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (291,42463,'SUNG MO KANG;YUSUF LEBLEBICI\r\n','CMOS DIGITAL INTEGRATED CIRCUITS : ANALYSIS AND DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (292,42464,'BOSCO LEUNG\r\n','VLSI FOR WIRELESS COMMUNICATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (293,42465,'RICHARD BARNETT;LARRY OCULL;SARAH COX\r\n','EMBEDDED C PROGRAMMING AND THE ATMEL AVR\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (294,42476,'YANNIS TSIVIDIS\r\n','OPERATION AND MODELING OF THE MOS TRANSISTOR\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (295,42477,'RAJ KAMAL\r\n','EMBEDDED SYSTEMS : ARCHITECTURE, PROGRAMMING AND DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (296,42478,'SORAB K. GHANDHI\r\n','VLSI FABRICATION PRINCIPLES : SILICON AND GALLIUM ARSENIDE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (297,42479,'JAN M. RABAEY;ANANTHA CHANDRAKASAN;BORIVOJE NIKOLIC\r\n','DIGITAL INTEGRATED CIRCUITS : A DESIGN PERSPECTIVE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (298,42480,'BHASKER J.\r\n','VHDL PRIMER\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (299,42482,'PARAG K. LALA\r\n','FAULT TOLERANT AND FAULT TESTABLE HARDWARE DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (300,42483,'DAVID K. CHENG\r\n','FIELD AND WAVE ELECTROMAGNETICS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (301,42484,'PALLAB BHATTACHARYA\r\n','SEMICONDUCTOR OPTOELECTRONIC DEVICES\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (302,42485,'NICK EFFORD\r\n','DIGITAL IMAGE PROCESSING : A PRACTICAL INTRODUCTION USING JAVA\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (303,42486,'PETER J. ASHENDEN\r\n','THE STUDENTS GUIDE TO VHDL\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (304,42487,'ROBIN J. WILSON\r\n','INTRODUCTION TO GRAPH THEORY\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (305,42488,'NARSINGH DEO\r\n','GRAPH THEORY : WITH APPLICATIONS TO ENGINEERING AND COMPUTER SCIENCE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (306,42489,'MUHAMMAD H. RAHID\r\n','INTRODUCTION TO PSPICE USING ORCAD FOR CIRCUITS AND ELECTRONICS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (307,42490,'BHASKER J.\r\n','VERILOG HDL SYNTHESIS : A PRACTICAL PRIMER\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (308,42491,'SAMIR PALNITKAR\r\n','VERILOG HDL\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (309,42492,'CARVER MEAD;LYNN CONWAY\r\n','INTRODUCTION TO VSLI SYSTEMS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (310,42493,'STEPHEN BROWN;ZVONKO VRANESIC\r\n','FUNDAMENTALS OF DIGITAL LOGIC WITH VERILOG DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (311,42494,'DAVID E. GOLDBERG\r\n','GENETIC ALGORITHMS : IN SEARCH, OPTIMIZATION AND MACHINE LEARNING\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (312,42495,'BEHZAD RAZAVI\r\n','DESIGN OF ANALOG CMOS INTEGRATED CIRCUITS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (313,42496,'SHAMPINE L.F.;GLADWELL I.;THOMPSON S.\r\n','SOLVING ODES WITH MATLAB\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (314,42497,'AHMAD M. IBRAHIM\r\n','FUZZY LOGIC FOR EMBEDDED SYSTEMS APPLICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (315,42498,'SUNDARARAJAN SRIRAM;SHUVRA S. BHATTACHARYYA\r\n','EMBEDDED MULTIPROCESSORS : SCHEDULING AND SYNCHRONIZATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (316,42539,'DAVID E. SIMON\r\n','AN EMBEDDED SOFTWARE PRIMER\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (317,42540,'NEIL H.E. WESTE;KAMRAN ESHRAGHIAN\r\n','PRINCIPLES OF CMOS VLSI DESIGN : A SYSTEMS PERSPECTIVE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (318,42541,'DELORES M. ETTER;DAVID C. KUNCICKY;DOUG HULL\r\n','INTRODUCTION TO MATLAB 6\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (319,42542,'BALAKRISHNAN R.;WILSON R.J.;SETHURAMAN G.\r\n','GRAPH THEORY AND ITS APPLICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (320,42606,'JOHAN H. HUIJSING;MICHIEL STEYAERT;ARTHUR VAN ROERMUND\r\n','ANALOG CIRCUIT DESIGN : SCALABLE ANALOG CIRCUIT DESIGN HIGH SPEED D/A CONVERTERS RF POWER AMPLIFIERS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (321,42607,'PAUL A. DURAN\r\n','A PRACTICAL GUIDE TO ANALOG BEHAVIORAL MODELING FOR IC SYSTEM DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (322,42608,'VAUGHN BETZ;JONATHAN ROSE;ALEXANDER MARQUARDT\r\n','ARCHITECTURE AND CAD FOR DEEP SUBMICRON FPGAS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (323,42609,'PINAKI MAZUMDER;ELIZABETH M. RUDNICK\r\n','GENETIC ALGORITHMS FOR VLSI DESIGN LAYOUT AND TEST AUTOMATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (324,42610,'KANAD CHAKRABORTY;PINAKI MAZUMDER\r\n','FAULT TOLERANCE AND RELIABILITY TECHNIQUES FOR HIGH DENSITY RANDOM ACCESS MEMORIES\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (325,42611,'CHRIS J. MYERS\r\n','ASYNCHRONOUS CIRCUIT DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (326,42612,'LOKENATH DEBNATH\r\n','WAVELET TRANSFORMS AND TIME FREQUENCY SIGNAL ANALYSIS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (327,42613,'STEVE HEATH\r\n','EMBEDDED SYSTEMS DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (328,43082,'TAI RAN HSU\r\n','MEMS AND MICROSYSTEMS DESIGN AND MANUFACTURE\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (329,43491,'MUTHUKUMARASWAMY P.;PRAKASAM R.;SUGUMAR S.\r\n','SITRA MINISPIN : MINIATURE RING SPINNING FRAME FOR TEST RUNS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (330,43492,'SUGUMAR S.;MUTHUKUMARASWAMY\r\n','SITRA FLEXIMARK A COMPUTERISED SYSTEM FOR MARKER MAKING IN GARMENT INDUSTRY\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (331,43493,'ARINDAM BASU;GOTIPAMUL R.L.\r\n','ONLINE MONITORING OF YARN CONTAMINATION ON WEFT KNITTING AND WINDING MACHINES\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (332,43494,'PRAKASAM R.;MUTHUKUMARASWAMY P.\r\n','MEASURING DEVICE FOR SUCTION PRESSURE IN PNEUMAFILS SITRA PNEUMA KIT\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (333,43495,'MUTHUKUMARASWAMY P.;PRAKASAM R.;BALASUBRAMANIAN H.\r\n','ENERGY EFFICIENT DRIVE CONTROL SYSTEM FOR AUTOMATIC CONE WINDING MACHINES SITRA ENERCONER\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (334,43496,'ARIDAM BASU\r\n','MICROFIBRES : PROPERTIES PROCESSING AND USES\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (335,43497,'CHANDRAN K.R.;BALASUBRAMANIAN H.;SUJATHA D.\r\n','ENERGY AND PRODUCTION MANAGEMEN INFORMATION SYSTEM FOR TEXTILE MILLS SITRA ENERINFOSYS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (336,43498,'CHELLAMANI K.P.;ARULMOZHI M.;THANABAL V.\r\n','DEVELOPMENT OF A TECHNOLOGY PACKAGE FOR SPECIALITY POLYESTER FIBRES\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (337,43885,'LESLIE CROMWELL;FRED J. WEIBELL;ERICH A. PFEIFFER\r\n','BIOMEDICAL INSTRUMENTATION AND MEASUREMENTS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (338,43886,'JACOB MILLMAN;HERBERT TABH\r\n','PULSE DIGITAL AND SWITCHING WAVEFORMS : DEVICES AND CIRCUITS FOR THEIR GENERATION AND PROCESSING\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (339,43945,'KAI HWANG\r\n','ADVANCED COMPUTER ARCHITECTURE : PARALLELISM SCALABILITY PROGRAMMABILIGY\r\n',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (340,43947,'MONSON H. HAYES\r\n','STATISTICAL DIGITAL SIGNAL PROCESSING AND MODELING\r\n',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (341,43952,'SZE S.M.\r\n','VLSI TECHNOLOGY\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (342,43953,'PADMANABHAN T.R.;BALA TRIPURASUNDARI B.\r\n','DESIGN THROUGH VERILOG HDL\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (343,43954,'SABIH H. GEREZ\r\n','ALGORITHMS FOR VLSI DESIGN AUTOMATION\r\n',2);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (344,43957,'JOHN P. UYEMURA\r\n','INTRODUCTION TO VLSI CIRCUITS AND SYSTEMS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (345,43958,'AMOS GILAT\r\n','MATLAB AN INTRODUCTION WITH APPLICATIONS\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (346,43959,'CHRISTOPH MEINEL;THORSTEN THEOBALD\r\n','ALGORITHMS AND DATA STRUCTURES IN VLSI DESIGN\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (347,43961,'SINA BALKIR;GUNHAN DUNDAR;SELCUK OGRENCI A.\r\n','ANALOG VLSI DESIGN AUTOMATION\r\n',1);
+insert  into `books`(`id`,`access_number`,`author_name`,`title`,`number_of_books`) values (348,43962,'FREDERICK J. HILL;GERALD R. PETERSON\r\n','COMPUTER AIDED LOGICAL DESIGN WITH EMPHASIS ON VLSI\r\n',1);
+
+/*Table structure for table `contact_us` */
+
+DROP TABLE IF EXISTS `contact_us`;
+
+CREATE TABLE `contact_us` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `phone_no` varchar(150) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `contact_us` */
+
+/*Table structure for table `issue_book` */
+
+DROP TABLE IF EXISTS `issue_book`;
+
+CREATE TABLE `issue_book` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `access_number` int(200) NOT NULL,
+  `emp_id` int(11) NOT NULL,
+  `issue_date` date NOT NULL,
+  `return_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+/*Data for the table `issue_book` */
+
+/*Table structure for table `librarian_login` */
+
+DROP TABLE IF EXISTS `librarian_login`;
+
+CREATE TABLE `librarian_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lib_username` varchar(50) NOT NULL,
+  `lib_password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `librarian_login` */
+
+insert  into `librarian_login`(`id`,`lib_username`,`lib_password`) values (1,'manjurathi','47c24f4f62b2e8d88b60aa07b99ab60c');
+
+/*Table structure for table `return_book` */
+
+DROP TABLE IF EXISTS `return_book`;
+
+CREATE TABLE `return_book` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `access_number` int(255) NOT NULL,
+  `emp_id` int(11) NOT NULL,
+  `return_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `return_book` */
+
+/*Table structure for table `staff` */
+
+DROP TABLE IF EXISTS `staff`;
+
+CREATE TABLE `staff` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` int(11) NOT NULL,
+  `staff_name` varchar(255) NOT NULL,
+  `staff_email` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
+
+/*Data for the table `staff` */
+
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (1,1657,'Dr. SHOBHA REKH','lilniega@yahoo.com');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (3,170,'DR. G. JOSEMIN BALA','josemin@karunya.edu');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (4,28,'Dr.(Mrs.) D.JACKULINE MONI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (5,1584,'Dr. N.M. SIVA MANGAI ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (6,201,'Dr. NESASUDHA M','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (7,484,'Dr. JUDE HEMANTH D','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (8,823,'Dr.D.NIRMAL','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (9,158,'Mr. ABRAHAM CHANDY D.','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (10,132,'Mr. SHANTY CHACKO','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (11,587,'Mrs. SHYLU .D.S','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (12,168,'Mrs. RAHIMUNNISA K.','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (13,360,'Mrs. ANITA JONES MARY T.','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (14,1278,'Mrs. D. JASMINE DAVID','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (15,447,'Dr. ANITHA J','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (16,436,'Mrs. SRIDEVI SATHIYA PRIYA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (17,599,'Ms. JENNIFER S. RAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (18,641,'Mr. IMMANUEL ALEX PANDIAN S.','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (19,1142,'Ms. ROOPA JEYASINGH','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (20,363,'Mr. D.SUGUMAR','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (21,707,'Ms. J.GRACE JENCY GNANAMMAL','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (23,891,'Mr.A.AMIR ANTON JONE','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (24,993,'Mr. D J.JAGANNATH','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (25,1156,'Ms. LILLY MALARVIZHI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (26,1319,'Mr. G MANOJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (27,1320,'Mr. SAMSON IMMANUEL J.','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (28,820,'Mr. D.NARAIN PONRAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (29,1446,'Mr. S. DHANASEKAR','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (30,1455,'Mr. R.S. SURIAVEL RAO','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (31,858,'Mrs. G.SHINE LET','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (32,978,'Mrs. M A P.MANIMEKALAI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (33,1152,'Ms. THUSNAVIS BELLA MARY','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (34,1199,'Mr.ALFRED KIRUBARAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (35,1268,'Mrs RAVEENA JUDIE DOLLY','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (36,1371,'Mrs. B. MANJURATHI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (37,1197,'Ms. DIANA ANDRUSHIA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (40,1289,'Mr. SHAJIN PRINCE','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (41,1298,'Mr. DINESH KUMAR','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (42,1352,'Mrs. JEEVITHA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (43,1386,'Mrs. T. MARY NEEBHA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (44,1430,'Mr. S.R. JINO RAMSON','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (45,1449,'Ms. I. EVELYN EZHILARASI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (46,1154,'Mr. S. MERLIN GILBERT RAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (47,1556,'Mr. J. JOHN PAUL','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (48,1557,'Mr. A.S. AUGUSTINE FLETCHER','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (49,1555,'Mr. S. JAMES RAJA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (50,1561,'Ms. C. SUGANTHI EVANGELINE','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (51,1564,'Ms. A. ANGELIN PEACE PREETHI','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (52,1572,'Ms. G. VIJILA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (53,1587,'Mrs. S. RADHA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (54,1588,'Mrs. P. MALIN BRUNTHA','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (55,1687,'MR J. JENKIN WINSTON','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (56,1688,'Mr. H. VICTOR DU JOHN','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (57,1698,'Mrs. R. CATHERINE JOY','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (58,1706,'Mr. K. MARTIN SAGAYAM','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (59,1713,'Mr. S. XAVIER AROCKIARAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (60,1717,'Ms. S. JEMIMA PRIYADARSHINI ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (61,1728,'Ms. SONIMA PARAYIL ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (62,1082,'Mr. P. GOMAR GUNASEELAN','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (63,49,'Mr.B.JEYACHANDRAN','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (64,76,'Mr. D.ARUL RAJ KUMAR','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (65,509,'Mr. WILSON CHRISTOPHER RAJ','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (66,632,'Mr. MANOHAR LIVINGSTON J','');
+insert  into `staff`(`id`,`emp_id`,`staff_name`,`staff_email`) values (67,737,'Mr. J. JEBAVARAM','');
+
+/*Table structure for table `staff_login` */
+
+DROP TABLE IF EXISTS `staff_login`;
+
+CREATE TABLE `staff_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` int(11) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `staff_email` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `staff_login` */
+
+insert  into `staff_login`(`id`,`emp_id`,`password`,`staff_email`) values (1,1657,'me11','lilniega@yahoo.com');
+insert  into `staff_login`(`id`,`emp_id`,`password`,`staff_email`) values (3,170,'you12','lilowusuaoduro@yahoo.com');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
